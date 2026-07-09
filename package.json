@@ -1,0 +1,39 @@
+{
+  "name": "@sef/sdk",
+  "version": "1.0.0",
+  "description": "SDK JavaScript para consumir las APIs de facturación electrónica DIAN de SEF (ebill, epayroll, dequivalent, dsupport, radian).",
+  "type": "module",
+  "main": "./src/index.js",
+  "module": "./src/index.js",
+  "types": "./types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./types/index.d.ts",
+      "import": "./src/index.js",
+      "default": "./src/index.js"
+    }
+  },
+  "files": [
+    "src",
+    "types",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node --test test/"
+  },
+  "keywords": [
+    "sef",
+    "dian",
+    "facturacion-electronica",
+    "ebill",
+    "epayroll",
+    "radian",
+    "sdk"
+  ],
+  "license": "UNLICENSED",
+  "private": true,
+  "sideEffects": false
+}
