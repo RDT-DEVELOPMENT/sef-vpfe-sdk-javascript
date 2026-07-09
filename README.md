@@ -1,9 +1,9 @@
 # SDK JavaScript — Facturación electrónica SEF
 
 Cliente JavaScript (Node.js y navegador) para consumir las APIs de los paquetes
-de facturación electrónica DIAN de SEF. Es hermano de los SDKs de
-[PHP](../php), [Python](../python) y [Java](../cmas) y expone la misma
-superficie de recursos.
+de facturación electrónica DIAN de SEF. Es un paquete independiente: no
+depende de ningún otro SDK del grupo (PHP, Python, Java, C#) — cada uno
+consume las mismas APIs HTTP de forma autónoma, en su propio lenguaje.
 
 | Recurso | Paquete backend | Prefijo de rutas |
 |---|---|---|
@@ -13,9 +13,10 @@ superficie de recursos.
 | `dsupport` | `sef/dsupport` | `/api/document/support` |
 | `radian` | `sef/radian` | `/api/radian` |
 
-> **Nota:** este es un SDK de **JavaScript** (Node/navegador). No se usa con
-> Maven ni Spring Boot — para consumir estas APIs desde Java (Maven /
-> Spring Boot starter) usa el SDK en [`SDKs/cmas`](../cmas).
+> **Nota:** este es un SDK de **JavaScript** (Node/navegador). Si necesitas
+> consumir estas APIs desde otro lenguaje, existen SDKs equivalentes e
+> independientes para PHP, Python, Java (Maven / Spring Boot starter) y C#,
+> en sus propios repositorios (`sef-vpfe-sdk-*`).
 
 ## Requisitos
 
@@ -26,17 +27,20 @@ El paquete es **ESM** (`import`). Sin dependencias externas.
 
 ## Instalación
 
-Al ser un paquete interno, agrégalo por ruta local:
+Este SDK vive en su propio repositorio (`sef-vpfe-sdk-javascript`) y no se
+publica en el registro público de npm. Para usarlo desde otro proyecto:
 
 ```bash
-npm install ../SDKs/javascript
-# o en package.json:  "@sef/sdk": "file:../SDKs/javascript"
+git clone https://github.com/RDT-DEVELOPMENT/sef-vpfe-sdk-javascript.git
+npm install ./sef-vpfe-sdk-javascript
+# o en package.json:  "@sef/sdk": "git+https://github.com/RDT-DEVELOPMENT/sef-vpfe-sdk-javascript.git"
 ```
 
-O úsalo directamente dentro de esta carpeta:
+O clona y pruébalo directamente:
 
 ```bash
-cd SDKs/javascript
+git clone https://github.com/RDT-DEVELOPMENT/sef-vpfe-sdk-javascript.git
+cd sef-vpfe-sdk-javascript
 npm test
 ```
 
